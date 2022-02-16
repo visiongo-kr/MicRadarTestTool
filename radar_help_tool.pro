@@ -24,6 +24,7 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    circularqueue.h \
     linechartview.h \
     serialportreadthread.h \
     widget.h

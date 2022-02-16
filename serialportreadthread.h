@@ -25,24 +25,25 @@ public:
         uint8_t status;
         uint8_t breatheValue;
         uint8_t heartRate;
-        uint8_t breatheLine[20];
-        uint8_t heartLine[20];
+        int8_t breatheLine[20];
+        int8_t heartRateLine[20];
     };
-    struct dataFramR77abh1 {
+    struct dataFrameR77abh1 {
         uint8_t head[4];
         uint8_t length;
         uint8_t workMode;
         uint16_t workTime;
+        uint8_t workStatus;
         uint8_t tlvNum;
         uint8_t runParm[3];
         uint16_t reserve;
         struct tlvData tlv[2];
         uint16_t crc;
-        uint16_t frameTail;
+        uint8_t frameTail[2];
     };
 
-    /* R60ABH1 Frame data */
-    struct dataFrameR60abh1 {
+    /* B60ABH1 Frame data */
+    struct dataFrameB60abh1 {
         uint8_t head[2];
         uint8_t control;
         uint8_t command;
@@ -54,20 +55,20 @@ public:
 
     SerialPortReadThread(QSerialPort *serialPort);
     void setDevice(volatile int value);
-
-    void setIsRunning(bool value);
+    void setThreadStatus(bool value);
 
 private:
     QSerialPort *serialPort;
-    bool isRunning;
+    bool threadStatus;
     volatile int device;
     enum serialPortReadStatus recvStatus;
-    struct dataFramR77abh1 frameR77abh1;
-    struct dataFrameR60abh1 frameR60abh1;
+    struct dataFrameR77abh1 frameR77abh1;
+    struct dataFrameB60abh1 frameB60abh1;
 protected:
     virtual void run();
 signals:
-    void r60abh1ReceiveFrame(struct dataFrameR60abh1 frame);
+    void b60abh1ReceiveFrame(struct dataFrameB60abh1 frame);
+    void r77abh1ReceiveFrame(struct dataFrameR77abh1 frame);
 };
 
 #endif // SERIALPORTREADTHREAD_H

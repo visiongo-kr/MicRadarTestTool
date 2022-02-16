@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1311</width>
-    <height>1000</height>
+    <width>1332</width>
+    <height>1025</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="1">
+   <item row="0" column="0">
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -27,7 +27,7 @@
        <attribute name="title">
         <string>R60ABH1</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_15">
+       <layout class="QGridLayout" name="gridLayout_16">
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupBox_10">
           <property name="title">
@@ -38,7 +38,7 @@
             <widget class="LineChartView" name="graphicsViewB60abh1HeartRate"/>
            </item>
            <item row="0" column="0" rowspan="3">
-            <widget class="QLCDNumber" name="lcdNumberHeartRateValue">
+            <widget class="QLCDNumber" name="lcdNumberB60abh1HeartRateValue">
              <property name="digitCount">
               <number>3</number>
              </property>
@@ -47,17 +47,17 @@
           </layout>
          </widget>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <widget class="QGroupBox" name="groupBox_11">
           <property name="title">
            <string>Breathe</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_14">
            <item row="0" column="1" rowspan="2">
-            <widget class="QGraphicsView" name="graphicsViewB60abh1Breathe"/>
+            <widget class="LineChartView" name="graphicsViewB60abh1Breathe"/>
            </item>
            <item row="0" column="0" rowspan="2">
-            <widget class="QLCDNumber" name="lcdNumberBreatheValue">
+            <widget class="QLCDNumber" name="lcdNumberB60abh1BreatheValue">
              <property name="digitCount">
               <number>3</number>
              </property>
@@ -315,17 +315,24 @@
         <item row="1" column="0">
          <widget class="QGroupBox" name="groupBox_3">
           <property name="title">
-           <string>GroupBox</string>
+           <string>TLV1</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QGroupBox" name="groupBox_5">
              <property name="title">
-              <string>GroupBox</string>
+              <string>Heart Rate</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
               <item row="0" column="0">
-               <widget class="QGraphicsView" name="graphicsView"/>
+               <widget class="QLCDNumber" name="lcdNumberR77abh1Tlv1HeartRateValue">
+                <property name="digitCount">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="LineChartView" name="graphicsViewR77abh1Tlv1HeartRate"/>
               </item>
              </layout>
             </widget>
@@ -333,11 +340,18 @@
            <item>
             <widget class="QGroupBox" name="groupBox_6">
              <property name="title">
-              <string>GroupBox</string>
+              <string>Breathe</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_5">
               <item row="0" column="0">
-               <widget class="QGraphicsView" name="graphicsView_2"/>
+               <widget class="QLCDNumber" name="lcdNumberR77abh1Tlv1BreatheValue">
+                <property name="digitCount">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="LineChartView" name="graphicsViewR77abh1Tlv1Breathe"/>
               </item>
              </layout>
             </widget>
@@ -346,19 +360,26 @@
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QGroupBox" name="groupBox_4">
+         <widget class="QGroupBox" name="groupBoxR77abh1Tlv2">
           <property name="title">
-           <string>GroupBox</string>
+           <string>TLV2</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
             <widget class="QGroupBox" name="groupBox_7">
              <property name="title">
-              <string>GroupBox</string>
+              <string>Heart Rate</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_6">
               <item row="0" column="0">
-               <widget class="QGraphicsView" name="graphicsView_3"/>
+               <widget class="QLCDNumber" name="lcdNumberR77abh1Tlv2HeartRateValue">
+                <property name="digitCount">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="LineChartView" name="graphicsViewR77abh1Tlv2HeartRate"/>
               </item>
              </layout>
             </widget>
@@ -366,11 +387,18 @@
            <item>
             <widget class="QGroupBox" name="groupBox_8">
              <property name="title">
-              <string>GroupBox</string>
+              <string>Breathe</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="0" column="0">
-               <widget class="QGraphicsView" name="graphicsView_4"/>
+               <widget class="QLCDNumber" name="lcdNumberR77abh1Tlv2BreatheValue">
+                <property name="digitCount">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="LineChartView" name="graphicsViewR77abh1Tlv2Breathe"/>
               </item>
              </layout>
             </widget>
@@ -383,9 +411,6 @@
      </widget>
      <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout_12">
-       <item row="0" column="0" colspan="2">
-        <widget class="QTextEdit" name="textEdit"/>
-       </item>
        <item row="1" column="0">
         <widget class="QWidget" name="widgetSerial0" native="true">
          <layout class="QGridLayout" name="gridLayout_10">
@@ -473,6 +498,9 @@
           </item>
          </layout>
         </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QTextEdit" name="textEdit"/>
        </item>
       </layout>
      </widget>
