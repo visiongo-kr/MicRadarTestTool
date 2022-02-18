@@ -53,6 +53,17 @@ public:
         uint8_t tail[2];
     };
 
+    /* R24AFD1 Frame data */
+    struct dataFrameR2afd1 {
+        uint8_t head;
+        uint16_t length;
+        uint8_t command;
+        uint8_t address1;
+        uint8_t address2;
+        uint8_t data[256];
+        uint16_t crc;
+    };
+
     SerialPortReadThread(QSerialPort *serialPort);
     void setDevice(volatile int value);
     void setThreadStatus(bool value);
@@ -64,6 +75,9 @@ private:
     enum serialPortReadStatus recvStatus;
     struct dataFrameR77abh1 frameR77abh1;
     struct dataFrameB60abh1 frameB60abh1;
+    struct dataFrameR2afd1 frameR2afd1;
+
+    uint16_t calculateCrc16(uint8_t *lpuc_Frame, uint16_t lus_Len);
 protected:
     virtual void run();
 signals:

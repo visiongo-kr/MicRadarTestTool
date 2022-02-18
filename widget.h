@@ -15,11 +15,11 @@
 
 #define B60ABH1HEART_Y_MAX          256
 #define B60ABH1HEART_Y_MIN          0
-#define B60ABH1HEART_X_MAX          500
+#define B60ABH1HEART_X_MAX          50
 #define B60ABH1HEART_X_MIN          0
 #define B60ABH1BREATHE_Y_MAX        256
 #define B60ABH1BREATHE_Y_MIN        0
-#define B60ABH1BREATHE_X_MAX        500
+#define B60ABH1BREATHE_X_MAX        50
 #define B60ABH1BREATHE_X_MIN        0
 #define R77ABH1TLV1HEART_Y_MAX      130
 #define R77ABH1TLV1HEART_Y_MIN      -128

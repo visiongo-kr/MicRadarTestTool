@@ -29,7 +29,7 @@ Widget::Widget(QWidget *parent)
     r77abh1Tlv2BreatheQueue = new CircularQueue<char>(1024);
     /* timer */
     lineChartViewTimer = new QTimer;
-    lineChartViewTimer->start(40);
+    lineChartViewTimer->start(35);
     /* connect */
     connect(this->ui->pushButtonSerialPort0Connect, &QPushButton::released, this, &Widget::pushButtonSerialPort0Connect);
     connect(this->ui->pushButtonSerialPort1Connect, &QPushButton::released, this, &Widget::pushButtonSerialPort1Connect);
@@ -89,6 +89,7 @@ void Widget::initLineChartView()
     b60abh1HeartChart->axes(Qt::Horizontal).back()->hide();
     b60abh1HeartChart->axes(Qt::Vertical).back()->hide();
     this->ui->graphicsViewB60abh1HeartRate->setLineChart(b60abh1HeartChart);
+    this->ui->graphicsViewB60abh1HeartRate->setRenderHint(QPainter::Antialiasing);
 
     b60abh1BreatheSeries->setUseOpenGL(true);
     b60abh1BreatheChart->addSeries(b60abh1BreatheSeries);
@@ -99,6 +100,7 @@ void Widget::initLineChartView()
     b60abh1BreatheChart->axes(Qt::Horizontal).back()->hide();
     b60abh1BreatheChart->axes(Qt::Vertical).back()->hide();
     this->ui->graphicsViewB60abh1Breathe->setLineChart(b60abh1BreatheChart);
+    this->ui->graphicsViewB60abh1Breathe->setRenderHint(QPainter::Antialiasing);
     // r77abh1 tlv1
     r77abh1Tlv1HeartSeries->setUseOpenGL(true);
     r77abh1Tlv1HeartChart->addSeries(r77abh1Tlv1HeartSeries);
@@ -109,6 +111,7 @@ void Widget::initLineChartView()
     r77abh1Tlv1HeartChart->axes(Qt::Horizontal).back()->hide();
     r77abh1Tlv1HeartChart->axes(Qt::Vertical).back()->hide();
     this->ui->graphicsViewR77abh1Tlv1HeartRate->setLineChart(r77abh1Tlv1HeartChart);
+    this->ui->graphicsViewR77abh1Tlv1HeartRate->setRenderHint(QPainter::Antialiasing);
 
     r77abh1Tlv1BreatheSeries->setUseOpenGL(true);
     r77abh1Tlv1BreatheChart->addSeries(r77abh1Tlv1BreatheSeries);
@@ -119,6 +122,7 @@ void Widget::initLineChartView()
     r77abh1Tlv1BreatheChart->axes(Qt::Horizontal).back()->hide();
     r77abh1Tlv1BreatheChart->axes(Qt::Vertical).back()->hide();
     this->ui->graphicsViewR77abh1Tlv1Breathe->setLineChart(r77abh1Tlv1BreatheChart);
+    this->ui->graphicsViewR77abh1Tlv1Breathe->setRenderHint(QPainter::Antialiasing);
     // r77abh1 Tlv2
     r77abh1Tlv2HeartSeries->setUseOpenGL(true);
     r77abh1Tlv2HeartChart->addSeries(r77abh1Tlv2HeartSeries);
@@ -129,6 +133,7 @@ void Widget::initLineChartView()
     r77abh1Tlv2HeartChart->axes(Qt::Horizontal).back()->hide();
     r77abh1Tlv2HeartChart->axes(Qt::Vertical).back()->hide();
     this->ui->graphicsViewR77abh1Tlv2HeartRate->setLineChart(r77abh1Tlv2HeartChart);
+    this->ui->graphicsViewR77abh1Tlv2HeartRate->setRenderHint(QPainter::Antialiasing);
 
     r77abh1Tlv2BreatheSeries->setUseOpenGL(true);
     r77abh1Tlv2BreatheChart->addSeries(r77abh1Tlv2BreatheSeries);
@@ -139,6 +144,7 @@ void Widget::initLineChartView()
     r77abh1Tlv2BreatheChart->axes(Qt::Horizontal).back()->hide();
     r77abh1Tlv2BreatheChart->axes(Qt::Vertical).back()->hide();
     this->ui->graphicsViewR77abh1Tlv2Breathe->setLineChart(r77abh1Tlv2BreatheChart);
+    this->ui->graphicsViewR77abh1Tlv2Breathe->setRenderHint(QPainter::Antialiasing);
 }
 
 void Widget::updateChartView(QChart *chart, QLineSeries *series,size_t size)
